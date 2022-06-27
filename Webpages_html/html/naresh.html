@@ -1,0 +1,187 @@
+<html>
+<title> Luck </title>
+<head>
+<style>
+.main-div{
+         margin-left:35%;
+          margin-top:3%;
+               width:800px;
+         }
+table{
+     display:inline-block;
+  text-align:center;
+ align-items:center;
+  
+    }
+input{ 
+            width:200px;
+           height:25px;
+       text-align:center;
+ background-color:white;
+          padding:14px 20px;
+           margin: 8px 5px;
+    border-radius:10px;
+           cursor:pointer;
+      }
+form{ 
+            width:60%;
+       text-align:center;
+           border:5px red solid; 
+ background-color:silver;
+       min height:400px;
+      }
+input[type=submit]{ 
+                  width:50%;
+                 height:6%;
+             text-align:center;
+       background-color:green;
+                  color:white;
+                padding:10px 20px;
+                 margin: 30px 12px;
+          border-radius:30px;
+                   }
+textarea{
+        margin: 20px 12px;
+        border:2px solid green;
+      }
+ select{    
+        text-align:center;   
+             width:70%;
+            height:35px;
+     border-radius:5px;
+            border:2px solid gold;
+   text-align-last:center;
+       }
+</style>
+<script>  
+function validateform(){  
+var name=document.adi.fname.value;  
+var name1=document.adi.lname.value;  
+
+
+
+
+if (name==null || name==""){  
+  alert("First Name can't be blank");  
+  return false;  
+}else if(name.length<2){  
+  alert("First Name must be at least 2 characters long.");  
+  return false;  
+  }  
+}
+
+
+if (name1==null || name1==""){  
+  alert("First Name can't be blank");  
+  return false;  
+}else if(name1.length<2){  
+  alert("First Name must be at least 2 characters long.");  
+  return false;  
+  }  
+}
+
+
+
+
+
+
+  
+</script>  
+</head>
+<body>
+<div class="main-div">
+<form name= "adi" action="index.html" onsubmit="return validateform()" >
+     <h1 style="color:yellow;"> Adinaresh Form</h1>
+<table>
+<tbody>
+   <tr>
+     <td>
+         First NAME:
+     </td>
+     <td>
+        
+      <input type="text" id="firstname" name="fname" placeholder="First Name" onkeypress="return /[a-z]/i.test(event.key)"/>
+     </td>
+  </tr>
+   <tr>
+     <td>
+        Last NAME:
+     </td>
+     <td>
+         <input type="text" id="lastname" name="lname" placeholder="Last Name" onkeypress="return /[a-z]/i.test(event.key)"/>
+     </td>
+  </tr>
+ <tr>
+     <td>
+        Mobile Number:
+     </td>
+     <td>
+         <input type="text" id="number" name="phone" placeholder="Enter your Number" />
+     </td>
+  </tr>
+ <tr>
+     <td>
+        Email:
+     </td>
+     <td>
+         <input type="text" name="mail" placeholder="@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+     </td>
+  </tr>
+
+ <tr>
+     <td>
+        Password:
+     </td>
+     <td>
+         <input type="password" name="pwd" placeholder="Password" />
+     </td>
+  </tr>
+<tr>
+     <td>
+        Confirm Password:
+     </td>
+     <td>
+         <input type="password" name="pwd" placeholder="Confirm Password" />
+     </td>
+  </tr>
+  <tr>
+     <td>
+        Address:
+     </td>
+     <td>
+         <textarea name="Address" cols="25" rows="3" ></textarea><br>
+     </td>
+  </tr><br>
+<tr>
+     <td>
+        Gender:
+     </td>
+     <td>
+         <select name="gender" id="gender"  > 
+                <option value> Select Your Gender </option>
+                <option value="1">Male</option> 
+                <option value="2">Femle </option> 
+                <option value="3">Others</option>
+         </select>
+     </td>
+  </tr>
+  <tr>
+     <td>
+        
+     </td>
+     <td>
+        <input type="submit" name="submit" placeholder="Submit"/>
+     </td>
+  </tr>
+
+
+</div>
+</form>
+</tbody>
+</table>
+
+
+</body>
+</html>
+
+<!--pattern="[a-zA-Z]{5,}" title="Minimum 5 letters and must be in charcters, numbers not allowed" required   -->

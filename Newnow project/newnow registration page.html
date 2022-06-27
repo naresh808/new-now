@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.main-div{
+margin-left:35%;
+margin-top:3%;
+width:800px;
+}
+table {
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+}
+input {
+  width: 200px;
+  height:8px;
+  background-color:white;
+  color: black;
+  padding: 14px 20px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+text-align:center;
+}
+
+input[type=submit] {
+  width: 60%;
+  height:8%;
+  background-color:green;
+  color: white;
+  padding: 14px 20px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+form
+{
+	border:2px solid yellow;
+	width:60%;
+         border:5px red solid;
+	background-color:skyblue;
+	min-height:400px;   
+text-align:center;    
+}
+select { 	
+                outline: 0; 
+                background-image: none; 
+                width: 95%; 
+                height: 35px; 
+                color: black; 
+                cursor: pointer; 
+                border:0px solid black; 
+                border-radius:10px; 
+text-align-last:center;
+	}
+       
+</style>
+<script>
+function validateForm() {
+  var userName = document.myForm.fname.value;
+  var addr = document.myForm.address.value;
+  var email = document.myForm.email.value;
+  var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
+
+  if (userName == "" || userName ==null  ) {
+    alert("Name must be filled out");
+    return false;
+  }
+
+if(email.match(mailformat))
+{
+
+}
+else{
+alert("You have entered an invalid email address!");
+return false;
+}
+  if(addr == "")
+   {
+     alert("Please Enter Your Address Details");
+     return false;
+   }
+
+if (document.getElementById('password').value == "" && document.getElementById('confirm_password').value == "") {
+ 
+    document.getElementById('message').innerHTML = '';
+  }
+  else if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+return false;
+  }
+
+
+
+alert('success');
+return true;
+}
+
+
+
+
+</script>
+
+</head>
+         
+	<body >
+<div class="main-div" >
+        	<form name="myForm" action="index.html" onsubmit="return validateForm()" >
+		<h1 >Registration Form</h1>
+
+  <table>
+  <tbody>
+     <tr>
+        <td>
+           Full Name:
+        </td>
+        <td>
+            <input type="text" id="username" name="fname" placeholder="Name" pattern="[A-Za-z]{2,40}" title="First name must me be more than 2 charcters < 40 charecters"/>
+
+        </td>
+     </tr>
+
+	 <tr>
+        <td>
+           Gender
+        </td>
+        <td>
+          <select name="gender" id="gender" required> 
+                <option value="">Gender</option> 
+                <option value="1">Male</option> 
+                <option value="2">Female</option> 
+                <option value="3">Others</option> 
+            </select> 
+        </td>
+     </tr>
+     
+     <tr>
+        <td>
+           Paaword:
+        <td>
+          
+          <input type="password" id="password" name="psw" placeholder="--pwd--" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+       
+ 	</td>
+     </tr>
+     <tr>
+        <td>
+           Confirm Password:
+        </td>
+        <td>
+           <input type="password" id="confirm_password" placeholder="--confirm new password--"  />
+        </td>
+     </tr>
+	<tr>
+        <td>
+           
+        </td>
+        <td>
+    			<span id='message'></span>
+        </td>
+     </tr>
+<tr>
+        <td>
+           Email ID:
+        </td>
+        <td>
+           <input type="text" name="email" id="username" placeholder="@gmail.com" title="Enter valid email" required/> 
+        </td>
+     </tr>
+     <tr>
+        <td>
+           Contact Number:
+        </td>
+        <td>
+    <input type="text" name="Phone Number" placeholder="Mobile number" pattern="[7-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9">
+        </td>
+     </tr>
+     <tr>
+        <td>
+           Address:
+        </td>
+        <td>
+          <textarea name="address" cols="30" rows="4" ></textarea> <br>
+        </td>
+     </tr>
+<tr>
+        <td>
+          
+        </td>
+
+        <td>
+       
+         <input type="submit" name="submit" value="Submit" />
+        </td>
+     </tr>
+  </tbody>
+</table>
+       
+</form>
+</div>	
+
+</body>
+</html>
+

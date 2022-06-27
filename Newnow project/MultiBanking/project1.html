@@ -1,0 +1,49 @@
+<html>
+<title>MULTI BANKING CARDLESS ATM TRANSACTIONS</TITLE>
+<head>MULTI BANKING AND CARDlESS ATM TRANSACTIONS</head><br>
+<body>
+<p style="background-color:lightblue;text-align:center;text-size:"40px";>MULTIBANKING_CARDLES_ATM_TRANSATIONS</p>
+<table border="0" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            Enter Acc.Number/PhoneNumber:
+        </td>
+        <td>
+            <input type="Enter Acc.Number/PhoneNumber" id="txtEnter Acc.Number/PhoneNumber" placeholder="Enter Acc.Number/PhoneNumber" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Enter Pin:
+        </td>
+        <td>
+          <input type="password" id="txtConfirmPassword" placeholder="PIN" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <input type="button" id="btnSubmit" value="Submit" style="background-color:cyan"/><br>
+<br>
+<input type="button" onclick="location.href='file:///C:/Users/91988/Desktop/NEW%20PROJECT/enteryournumber.html';" value="FORGOT PIN" style="background-color:yellow"/>
+             <input type="button" value="CREATE NEW ACCOUNT" style="background-color:greenyellow"/>
+</td>
+</tr>
+</table>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+            var password = $("#txtPassword").val();
+            var confirmPassword = $("#txtConfirmPassword").val();
+            if (password != confirmPassword) {
+                alert("Account number or Passwords do not match.");
+                return false;
+            }
+            return true;
+        });
+    });
+</script>       
+</body>
+</html>

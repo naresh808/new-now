@@ -1,0 +1,75 @@
+<table border="0" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            Enter new Password:
+        </td>
+        <td>
+            <input type="password" id="txtPassword" placeholder="new password" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Confirm Password:
+        </td>
+        <td>
+            <input type="password" id="txtConfirmPassword" placeholder="confirm new password" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <input type="button" id="btnSubmit" value="Submit" />
+        </td>
+    </tr>
+</table>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+            var password = $("#txtPassword").val();
+            var confirmPassword = $("#txtConfirmPassword").val();
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        });
+    });
+</script>
+<html>
+<head>
+<style>
+form
+{
+ border:2px solid red;
+ width:30%;
+ text-align:center;
+}
+</style>
+</head>
+
+<body>
+<form>
+<label>enter </label>
+<input type="password" placeholder="text"><br>
+<label>sai</label>
+<input type="password" placeholder="enter"><br>
+<input type="button" value="sudmit">
+</form>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+            var password = $("#txtPassword").val();
+            var confirmPassword = $("#txtConfirmPassword").val();
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        });
+    });
+</script>
+</body>
+</html>

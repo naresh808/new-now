@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body
+{
+	text-align:center;
+}
+.zxc
+{
+ border:2px solid red;
+ background-color:SILVER;
+min-width:370px;
+max-width:500px;
+ text-align:center;
+margin:auto;
+ margin-top:100px;
+}
+input[type=button], input[type=submit] {
+  width: 20%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+input[type=text] {
+  background-color:white;
+font-size:15px;
+padding:5px 10px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 4px;
+text-align:center;
+}
+
+</style>
+<script>
+function canclefield(){
+document.getElementById('txtPhoneNo').value = "";
+}
+
+function isNumber(evt) {
+  evt = (evt) ? evt : window.event;
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    alert("Please enter only Numbers.");
+    return false;
+  }
+  return true;
+}
+
+function ValidateNo() {
+  var phoneNo = document.getElementById('txtPhoneNo');
+
+  if(phoneNo.value == "" || phoneNo.value == null) {
+    alert("Please enter your Mobile No.");
+    return false;
+  }
+  else if(phoneNo.value.length < 10 || phoneNo.value.length > 10) {
+    alert("Mobile No. is not valid, Please Enter 10 Digit Mobile No.");
+    return false;
+  }else {
+  return true;
+}
+}
+
+</script>
+  
+<body>
+	<form class="zxc" action="enterOTP.html" onsubmit="return ValidateNo();">
+		<h3 style="text-align:center">MULTI BANKING WITH CARDLESS ATM TRANSACTIONS</h3>
+		<div >
+		
+    <label>ENTER YOUR REGISTERED MOBILE NUMBER </label>
+    <!-- html input type=tel for phone number which contain a pattern -->
+	<input id="txtPhoneNo" type="text" onkeypress="return isNumber(event)" ><br/>
+      
+    <!-- html input type=submit for submit a form --> 
+		</div>
+		<div class="sai">
+                <input type="button" " id="cancle" value="CANCEL" onclick="canclefield();" style="background-color:red;"/>
+		<input type="submit" value="Submit" >
+		</div>
+	</form>
+
+</body>
+</html>

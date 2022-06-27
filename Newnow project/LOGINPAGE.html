@@ -1,0 +1,134 @@
+<html>
+<title> Login Page</title>
+<head>
+<style>
+.main-div{
+         margin-left:35%;
+          margin-top:3%;
+               width:800px;
+         }
+table{
+     display:inline-block;
+  text-align:center;
+ align-items:center;
+  
+    }
+input{ 
+            width:200px;
+           height:25px;
+       text-align:center;
+ background-color:white;
+          padding:15px 20px;
+           margin: 8px 5px;
+    border-radius:10px;
+           cursor:pointer;
+      }
+form{ 
+            width:80%;
+       text-align:center;
+           border:5px yellow solid; 
+ background-color:silver;
+       min height:400px;
+      }
+input[type=submit]{ 
+                  width:20%;
+                 height:6%;
+             text-align:center;
+       background-color:green;
+                  color:white;
+                padding:5px 10px;
+                 margin: 5px 15px;
+          border-radius:30px;
+                   }
+input[type=reset]{ 
+                  width:20%;
+                 height:6%;
+             text-align:center;
+       background-color:red;
+                 color:yellow;
+                padding:5px 10px;
+                 margin: 5px 1px;
+          border-radius:20px;
+                   }
+</style>
+<script>  
+function validateform()
+{  
+var name=document.adi.username.value;  
+ 
+if (name==null || name=="")
+    {  
+     alert("First Name can't be blank");  
+     return false;  
+   }
+else if(name.length<2)
+   {  
+     alert("First Name must be at least 2 characters long.");  
+     return false;  
+    } 
+} 
+function verifyPassword() {  
+  var pw = document.getElementById("pswd").value;  
+  //check empty password field  
+  if(pw == "") {  
+     document.getElementById("message").innerHTML = "**Fill the password please!";  
+     return false;  
+  }  
+   
+ //minimum password length validation  
+  if(pw.length < 8) {  
+     document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
+     return false;  
+  }  
+  
+//maximum length of password validation  
+  if(pw.length > 15) {  
+     document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";  
+     return false;  
+  } else {  
+     alert("Password is correct");  
+  }  
+}    
+
+</script>  
+</head>
+<body>
+<div class="main-div">
+<form name= "adi"  onsubmit="return validateform()" >
+     <h1 style="color:blue;">Customer Login Page</h1>
+<table>
+<tbody>
+   <tr>
+     <td>
+         User ID:
+     </td>
+     <td>
+        
+      <input type="text" id="USERNAME" name="username" placeholder="Enter UserID" onkeypress="return /[a-z]/i.test(event.key)"/>
+     </td>
+  </tr>
+ <tr>
+     <td>
+        Password:
+     </td>
+     <td>
+         <input type="password" id="pswd" name="pwd" placeholder="Password" />
+     </td>
+  </tr>
+        
+
+</tbody>
+
+</table><br>
+        <div class="and" style="float:center;">
+            <input type="submit" name="submit" placeholder="Submit" onsubmit="return verifyPassword()" />
+            <input type="reset" value="Reset" />
+            
+       </div>
+        
+</div>
+</form>
+
+</body>
+</html>
+
